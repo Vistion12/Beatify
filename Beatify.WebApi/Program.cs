@@ -7,13 +7,15 @@ using Microsoft.Extensions.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-string connection = builder.Configuration.GetConnectionString("BeatifyDataBaseContext");
-// добавляем контекст ApplicationContext в качестве сервиса в приложение
-builder.Services.AddDbContext<BeatifyDataBaseContext>(options =>
-    options.UseSqlServer(connection));
+//string connection = builder.Configuration.GetConnectionString("BeatifyDataBaseContext");
+//// добавляем контекст ApplicationContext в качестве сервиса в приложение
+//builder.Services.AddDbContext<BeatifyDataBaseContext>(options =>
+//    options.UseSqlServer(connection));
 builder.Services.AddControllers();
-builder.Services.AddTransient<IGroupRepository, GroupRepository>();
-
+//builder.Services.AddTransient<IGroupRepository, GroupRepository>();
+//builder.Services.AddTransient<IAlbumRepository, AlbumRepository>();
+//builder.Services.AddTransient<IGenreRepository, GenreRepository>();
+//builder.Services.AddTransient<ISongRepository, SongRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

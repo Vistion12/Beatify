@@ -1,9 +1,11 @@
-﻿Console.WriteLine("Hello, World!");
+﻿
 
-using (var client =new HttpClient())
-{
-    using var result = await client.GetAsync("https://localhost:7037/Groups");
-    string responseBody=await result.Content.ReadAsStringAsync();
-    Console.WriteLine(result.RequestMessage);
-}
-Console.WriteLine("the over");
+using var client = new HttpClient();
+
+var responsemesage = await client.GetAsync("https://localhost:7037/Groups");
+
+
+var response= await responsemesage.Content.ReadAsStringAsync();
+
+
+Console.ReadKey();
